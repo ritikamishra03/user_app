@@ -8,8 +8,11 @@
 
     <% @users.each do |user| %>
     <tr>        
-        <td><%=user.name%></td>
-        <td><%=user.email%></td>
+        <td><%=user.name%><hr></td>
+        <td><%=user.email%><hr></td>
+        <td><%=link_to 'show', user_path(user.id)%><hr>
+        <td><%=link_to 'edit' ,edit_user_path(user.id)%><hr>
+        <td><%= link_to 'destory',user, method: :delete, data: { confirm: 'Are you sure?' }%><hr>
     </tr>
     <%end%>
 
